@@ -67,7 +67,7 @@ dependencies {
     testImplementation Libs.Testing.archTesting
     androidTestImplementation Libs.Testing.testRunner
     androidTestImplementation Libs.Testing.esperesso
-
+    implementation(project(":domain"))
 }
 
 repositories {

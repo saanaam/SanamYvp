@@ -2,6 +2,8 @@ package com.nar.bimito.remote.adapter
 
 import com.nar.bimito.remote.response.RestResponse
 import com.google.gson.Gson
+import com.nar.bimito.domain.exception.AuthorizationException
+import com.nar.bimito.domain.exception.NetworkException
 import retrofit2.Response
 import java.net.HttpURLConnection
 

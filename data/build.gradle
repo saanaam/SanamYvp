@@ -47,6 +47,9 @@ dependencies {
     implementation Libs.Common.daggerAndroidCompiler
     implementation Libs.Common.daggerAndroid
     implementation Libs.Common.gson
+
+    implementation(project(":domain"))
+
 }
 
 repositories {
