@@ -4,11 +4,14 @@ import com.nar.bimito.Libs
 buildscript {
     ext.kotlin_version = "1.4.30"
     repositories {
-        google()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath Libs.Plugins.safeargs
         // NOTE: Do not place your application dependencies here; they belong
@@ -18,7 +21,10 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
         jcenter()
     }
 }

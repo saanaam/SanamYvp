@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.azki.bimito.presentation.R
+import com.nar.bimito.presentation.R
 
 fun Context.integer(@IntegerRes resId: Int) =
     resources.getInteger(resId)

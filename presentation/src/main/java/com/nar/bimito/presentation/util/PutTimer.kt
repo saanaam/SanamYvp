@@ -35,7 +35,6 @@ class PutTimer(
             }
 
             override fun onTick(millisUntilFinished: Long) {
-
                 displayTime =
                     context.string(
                         R.string.timer_format,

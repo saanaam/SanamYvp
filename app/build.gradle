@@ -4,6 +4,7 @@ import com.nar.bimito.Libs
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs"
 
 
@@ -46,9 +47,6 @@ dependencies {
     //Common
     implementation Libs.Jetpack.material
     implementation Libs.Common.kotlin
-    implementation Libs.Common.daggerCompiler
-    implementation Libs.Common.daggerAndroidCompiler
-    implementation Libs.Common.daggerAndroid
     implementation Libs.Common.gson
     implementation Libs.Common.retrofit
     implementation Libs.Common.retrofitGson
@@ -69,9 +67,6 @@ dependencies {
     // Glide
     implementation Libs.Common.glide
     kapt Libs.Common.glideCompiler
-    implementation project(":data")
-    implementation project(":presentation")
-    implementation project(":log")
-    implementation project(":domain")
+
 
 }
