@@ -1,11 +1,14 @@
 import com.nar.bimito.Android
 import com.nar.bimito.Libs
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: "androidx.navigation.safeargs"
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id "androidx.navigation.safeargs"
+    id 'dagger.hilt.android.plugin'
+}
 
 
 android {
@@ -44,11 +47,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
 
 
-    //Common
+    // Common
     implementation Libs.Jetpack.material
     implementation Libs.Common.kotlin
     implementation Libs.Common.gson
     implementation Libs.Common.retrofit
+    implementation Libs.Common.moshi
     implementation Libs.Common.retrofitGson
     implementation Libs.Common.okHttpInterceptor
     implementation Libs.Common.stetho
@@ -68,5 +72,12 @@ dependencies {
     implementation Libs.Common.glide
     kapt Libs.Common.glideCompiler
 
+    // DaggerHilt
+    implementation Libs.Common.daggerHilt
+    kapt Libs.Common.daggerHiltCompiler
+    implementation Libs.Common.daggerHiltLifecycle
+    kapt Libs.Common.daggerHiltKotlin
+
+    implementation(project(":data"))
 
 }

@@ -7,6 +7,7 @@ object Libs {
 //        const val gradleVersions = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersions}"
         const val ktlint = "com.pinterest:ktlint:${Versions.ktlint}"
         const val safeargs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
+        const val daggerHilt = "com.google.dagger:hilt-android-gradle-plugin:2.31.1-alpha"
     }
 
     object Modules {
@@ -46,6 +47,7 @@ object Libs {
         const val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+        const val moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
         const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
         const val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
         const val stetho = "com.facebook.stetho:stetho:${Versions.stetho}"
@@ -54,6 +56,12 @@ object Libs {
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
         const val kotlinMapStruct = "com.github.pozo:mapstruct-kotlin:${Versions.KotlinMapStructVersion}"
         const val javaxInject = "javax.inject:javax.inject:${Versions.javaxInjectVersion}"
+
+        const val daggerHilt = "com.google.dagger:hilt-android:2.31.1-alpha"
+        const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:2.31.1-alpha"
+        const val daggerHiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+        // When using Kotlin
+        const val daggerHiltKotlin = "androidx.hilt:hilt-compiler:1.0.0-beta01"
 
     }
 

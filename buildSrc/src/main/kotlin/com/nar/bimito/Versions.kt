@@ -13,7 +13,7 @@ object Versions {
     const val constraintLayout = "1.1.3"
     const val room = "2.2.5"
     const val dagger = "2.25.4"
-    const val okHttp = "3.8.1"
+    const val okHttp = "4.9.0"
     const val gson = "2.8.6"
     const val retrofit = "2.7.1"
     const val stetho = "1.5.1"
