@@ -13,8 +13,7 @@ import javax.inject.Inject
 
 class AccountManagerImpl @Inject constructor(@ApplicationContext private val context: Context) :
     AccountManager {
-    private val KEY_ACCOUNT_DATA =
-        "com.nar.bimito.di.accountManager.AccountManager_key_data"
+    private val KEY_ACCOUNT_DATA = "com.nar.bimito.di.accountManager.AccountManager_key_data"
 
     init {
         getAccount(context)

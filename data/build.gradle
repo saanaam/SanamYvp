@@ -42,10 +42,13 @@ dependencies {
     implementation Libs.Common.stetho
     implementation Libs.Common.stetho_OkHttp
     implementation Libs.Common.kotlin
-    implementation Libs.Common.daggerCompiler
-    implementation Libs.Common.daggerAndroidCompiler
-    implementation Libs.Common.daggerAndroid
     implementation Libs.Common.gson
+
+    // Dagger
+    implementation Libs.Common.daggerHilt
+    implementation Libs.Common.daggerHiltCompiler
+    kapt Libs.Common.daggerHiltKotlin
+    kapt Libs.Common.daggerHiltLifecycle
 
     implementation(project(":domain"))
 

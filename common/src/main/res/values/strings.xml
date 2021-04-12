@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timer_format">%d:%d</string>
+    <string name="all_error_happens" >""</string>
+    <string name="all_copy_clipboard_message" >""</string>
+</resources>

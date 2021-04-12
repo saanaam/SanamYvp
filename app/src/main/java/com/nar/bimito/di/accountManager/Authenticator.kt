@@ -4,6 +4,7 @@ import android.accounts.*
 import android.accounts.AccountManager
 import android.content.Context
 import android.os.Bundle
+import kotlin.jvm.Throws
 
 class Authenticator(private val context: Context) :
     AbstractAccountAuthenticator(context) {

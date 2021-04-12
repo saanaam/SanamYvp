@@ -5,7 +5,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
     id "androidx.navigation.safeargs"
     id 'dagger.hilt.android.plugin'
 }
@@ -43,8 +42,6 @@ android {
 
 dependencies {
 
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
 
 
     // Common
@@ -79,5 +76,9 @@ dependencies {
     kapt Libs.Common.daggerHiltKotlin
 
     implementation(project(":data"))
+    implementation(project(":presentation"))
+    implementation(project(":common"))
+    implementation(project(":log"))
+
 
 }

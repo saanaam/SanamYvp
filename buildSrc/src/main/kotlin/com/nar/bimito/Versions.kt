@@ -1,6 +1,10 @@
 package com.nar.bimito
 
 object Versions {
+    const val daggerHiltLifeCycle = "1.0.0-alpha03"
+    const val daggerHiltCompiler ="2.31.1-alpha"
+    const val daggerHilt = "2.31.1-alpha"
+    const val activity = "1.2.2"
     const val arrow = "0.10.4"
 //    const val gradle = "4.0.1"
     const val ktlint = "0.37.2"

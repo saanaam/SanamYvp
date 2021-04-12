@@ -28,9 +28,10 @@ object Libs {
         const val material = "com.google.android.material:material:${Versions.material}"
         const val annotations = "androidx.annotation:annotation:${Versions.material}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-        const val navigationUi ="androidx.navigation:navigation-ui:${Versions.navigationComponent}"
-        const val navigationFragment = "androidx.navigation:navigation-fragment:${Versions.navigationComponent}"
+        const val navigationUi ="androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
+        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
         const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+        const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
     }
 
     object Common {
@@ -41,10 +42,6 @@ object Libs {
         const val arrowCore = "io.arrow-kt:arrow-core:${Versions.arrow}"
         const val arrowSyntax = "io.arrow-kt:arrow-syntax:${Versions.arrow}"
         const val arrowMeta = "io.arrow-kt:arrow-meta:${Versions.arrow}"
-        const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
-        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
-        const val daggerAndroid = "com.google.dagger:dagger-android-support:${Versions.dagger}"
-        const val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
@@ -56,12 +53,12 @@ object Libs {
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
         const val kotlinMapStruct = "com.github.pozo:mapstruct-kotlin:${Versions.KotlinMapStructVersion}"
         const val javaxInject = "javax.inject:javax.inject:${Versions.javaxInjectVersion}"
-
-        const val daggerHilt = "com.google.dagger:hilt-android:2.31.1-alpha"
-        const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:2.31.1-alpha"
-        const val daggerHiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+        const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
+        const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltCompiler}"
+        const val daggerHiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.daggerHiltLifeCycle}"
         // When using Kotlin
         const val daggerHiltKotlin = "androidx.hilt:hilt-compiler:1.0.0-beta01"
+
 
     }
 

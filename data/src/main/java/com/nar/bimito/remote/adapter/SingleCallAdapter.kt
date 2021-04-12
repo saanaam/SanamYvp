@@ -30,7 +30,6 @@ class SingleCallAdapter<T>(private val apiCall: suspend () -> Response<RestRespo
                 // TODO : complete with network message
                 throw NetworkException(null)
             }
-
         } catch (exception: Exception) {
             return ResponseWrapper.Error(exception)
         }

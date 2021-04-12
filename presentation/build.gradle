@@ -1,10 +1,10 @@
 import com.nar.bimito.Android
 import com.nar.bimito.Libs
-
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion(Android.compileSdkVersion)
@@ -38,15 +38,17 @@ android {
 dependencies {
 
     // Jetpack
+    implementation Libs.Jetpack.activity
+    implementation Libs.Jetpack.material
+    implementation Libs.Jetpack.fragment
     implementation Libs.Jetpack.lifecycleExtensions
     implementation Libs.Jetpack.viewModelKtx
     implementation Libs.Jetpack.livedataKtx
-    implementation Libs.Jetpack.material
     implementation Libs.Jetpack.constraintLayout
     implementation Libs.Jetpack.navigationFragment
     implementation Libs.Jetpack.navigationUi
-    implementation Libs.Jetpack.fragment
 
+    //global
     implementation Libs.Common.kotlin
     implementation Libs.Common.coroutines
     implementation Libs.Common.coroutinesAndroid
@@ -57,10 +59,10 @@ dependencies {
     kapt Libs.Common.arrowMeta
 
     // Dagger
-    implementation Libs.Common.dagger
-    implementation Libs.Common.daggerAndroid
-    kapt Libs.Common.daggerCompiler
-    kapt Libs.Common.daggerAndroidCompiler
+    implementation Libs.Common.daggerHilt
+    implementation Libs.Common.daggerHiltCompiler
+    kapt Libs.Common.daggerHiltKotlin
+    kapt Libs.Common.daggerHiltLifecycle
 
     // Test Dependencies
     testImplementation Libs.Testing.junit
@@ -69,6 +71,7 @@ dependencies {
     androidTestImplementation Libs.Testing.testRunner
     androidTestImplementation Libs.Testing.esperesso
     implementation(project(":domain"))
+    implementation(project(":common"))
 }
 
 repositories {

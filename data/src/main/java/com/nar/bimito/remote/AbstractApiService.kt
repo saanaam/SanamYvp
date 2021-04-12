@@ -14,7 +14,6 @@ import kotlin.reflect.KProperty
 abstract class AbstractApiService<S> constructor(private val serviceClass: Class<S>) :
     API<S> {
 
-
     @Inject
     lateinit var retrofit: Retrofit
 

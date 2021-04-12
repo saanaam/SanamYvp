@@ -10,4 +10,5 @@ open class RestResponse<R> : Dto {
 
     @SerializedName("message")
     var message: String? = null
+
 }

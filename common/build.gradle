@@ -1,0 +1,57 @@
+import com.nar.bimito.Android
+import com.nar.bimito.Libs
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion(Android.compileSdkVersion)
+    buildToolsVersion(Android.buildToolsVersion)
+
+    defaultConfig {
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+        vectorDrawables.useSupportLibrary true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Jetpack
+    implementation Libs.Jetpack.activity
+    implementation Libs.Jetpack.material
+    implementation Libs.Jetpack.fragment
+    implementation Libs.Jetpack.lifecycleExtensions
+    implementation Libs.Jetpack.viewModelKtx
+    implementation Libs.Jetpack.livedataKtx
+    implementation Libs.Jetpack.constraintLayout
+    implementation Libs.Jetpack.navigationFragment
+    implementation Libs.Jetpack.navigationUi
+
+    //glide
+    implementation Libs.Common.glide
+    implementation Libs.Common.glideCompiler
+
+
+    
+    implementation(project(":domain"))
+
+}

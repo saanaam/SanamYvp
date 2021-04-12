@@ -4,6 +4,8 @@ import com.nar.bimito.Libs
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    
 }
 
 android {
@@ -37,11 +39,43 @@ android {
 
 dependencies {
 
+    // Test Dependencies
+    testImplementation Libs.Testing.junit
+    testImplementation Libs.Testing.mockitoKotlin
+    testImplementation Libs.Testing.archTesting
+    androidTestImplementation Libs.Testing.testRunner
+    androidTestImplementation Libs.Testing.esperesso
+
+    // Dagger
+    implementation Libs.Common.daggerHilt
+    implementation Libs.Common.daggerHiltCompiler
+    kapt Libs.Common.daggerHiltKotlin
+    kapt Libs.Common.daggerHiltLifecycle
+
+    // Jetpack
+    implementation Libs.Jetpack.activity
     implementation Libs.Jetpack.material
+    implementation Libs.Jetpack.fragment
+    implementation Libs.Jetpack.lifecycleExtensions
+    implementation Libs.Jetpack.viewModelKtx
+    implementation Libs.Jetpack.livedataKtx
+    implementation Libs.Jetpack.constraintLayout
+    implementation Libs.Jetpack.navigationFragment
+    implementation Libs.Jetpack.navigationUi
+
+    //global
     implementation Libs.Common.kotlin
     implementation Libs.Common.coroutines
     implementation Libs.Common.coroutinesAndroid
-    implementation Libs.Common.mapStruct
-    implementation Libs.Common.kotlinMapStruct
+    implementation Libs.Common.arrowCore
+    implementation Libs.Common.arrowSyntax
+    implementation Libs.Common.glide
+    implementation Libs.Common.glideCompiler
+    kapt Libs.Common.arrowMeta
+
+
+    implementation Libs.Jetpack.material
+    implementation Libs.Common.kotlin
+    implementation Libs.Common.coroutines
     implementation Libs.Common.javaxInject
 }
