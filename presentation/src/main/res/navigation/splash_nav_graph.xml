@@ -16,7 +16,7 @@
 
     <fragment android:id="@+id/mainFragment"
         android:label="main_fragment"
-        android:name="com.nar.bimito.presentation.splash.MainFragment"
+        android:name="com.nar.bimito.presentation.splash.main.MainFragment"
         tools:layout="@layout/fragment_main">
     </fragment>
 

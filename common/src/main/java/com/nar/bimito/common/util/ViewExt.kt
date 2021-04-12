@@ -86,7 +86,7 @@ private fun View.getResId(attr: Int): Int {
 
 
 fun setImageResourceCompat(view: View, @DrawableRes drawable: Int) {
-    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
         (view as? AppCompatImageView)?.setImageResource(drawable)
     } else {
         (view as? FloatingActionButton)?.setImageResource(drawable)
@@ -94,7 +94,7 @@ fun setImageResourceCompat(view: View, @DrawableRes drawable: Int) {
 }
 
 fun loadFromUrlCompat(view: View, link: String, @DrawableRes placeHolder: Int = 0) {
-    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
         (view as? AppCompatImageView)?.loadFromUrl(link, placeHolder)
     } else {
         (view as? FloatingActionButton)?.loadFromUrl(link, placeHolder)

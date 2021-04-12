@@ -1,10 +1,12 @@
 import com.nar.bimito.Android
 import com.nar.bimito.Libs
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion(Android.compileSdkVersion)
