@@ -35,7 +35,7 @@ fun Fragment.hideKeyboard() {
 }
 
 fun Fragment.showError(error: ErrorState, onApplyClicked: (() -> Unit)? = null) {
-    throw IllegalStateException("error view not implemented")
+    showSnackbar(error.message)
 }
 
 fun Fragment.showKeyboard() {

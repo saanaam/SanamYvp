@@ -17,7 +17,17 @@ class SingleCallAdapter<T>(private val apiCall: suspend () -> Response<RestRespo
             if (execute.isSuccessful) {
                 response = execute.body()
                 response?.let {
-                    return ResponseWrapper.Success(it.data)
+                    it.messageCode?.let { messageCode ->
+                        return when (messageCode) {
+                            200 -> ResponseWrapper.Success(it.result)
+                            else -> ResponseWrapper.Error(
+                                NetworkException(
+                                    it.message,
+                                    it.messageCode.toString()
+                                )
+                            )
+                        }
+                    }
                 }
                 return ResponseWrapper.Complete()
             } else {
@@ -27,8 +37,7 @@ class SingleCallAdapter<T>(private val apiCall: suspend () -> Response<RestRespo
 
                 val json = execute.errorBody()?.string()
                 val response = Gson().fromJson(json, RestResponse::class.java)
-                // TODO : complete with network message
-                throw NetworkException(null)
+                throw NetworkException(response.message, response.messageCode.toString())
             }
         } catch (exception: Exception) {
             return ResponseWrapper.Error(exception)

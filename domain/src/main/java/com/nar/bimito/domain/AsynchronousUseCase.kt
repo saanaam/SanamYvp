@@ -1,7 +1,5 @@
 package com.nar.bimito.domain
 
-import com.nar.bimito.domain.UseCase
-import com.nar.bimito.domain.UseCaseResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -15,6 +15,7 @@ class AccountManagerImpl @Inject constructor(@ApplicationContext private val con
     AccountManager {
     private val KEY_ACCOUNT_DATA = "com.nar.bimito.di.accountManager.AccountManager_key_data"
 
+    private lateinit var accountType : String
     init {
         getAccount(context)
     }
@@ -34,12 +35,12 @@ class AccountManagerImpl @Inject constructor(@ApplicationContext private val con
             KEY_ACCOUNT_DATA,
             gson.toJson(accountData)
         )
-        var accountType = ""
+
         val applicationInfo = context.packageManager.getApplicationInfo(
             context.packageName,
             PackageManager.GET_META_DATA
         )
-        accountType = applicationInfo.metaData.getString("account_type").toString()
+        accountType = applicationInfo.metaData?.getString("account_type").toString()
         accountManager.addAccountExplicitly(
             Account(getApplicationName(context), accountType),
             "bimito",
@@ -48,17 +49,17 @@ class AccountManagerImpl @Inject constructor(@ApplicationContext private val con
         account = accountData
     }
 
+
     override fun getAccount(context: Context): AccountData {
         if (account == null) {
             val accountManager: android.accounts.AccountManager =
                 android.accounts.AccountManager.get(context)
-            var accountType = ""
             try {
                 val applicationInfo = context.packageManager.getApplicationInfo(
                     context.packageName,
                     PackageManager.GET_META_DATA
                 )
-                accountType = applicationInfo.metaData.getString("account_type").toString()
+                accountType = applicationInfo.metaData?.getString("account_type").toString()
             } catch (e: PackageManager.NameNotFoundException) {
                 e.printStackTrace()
             }

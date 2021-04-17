@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dagger.hilt.android.plugin'
 android {
     compileSdkVersion(Android.compileSdkVersion)
     buildToolsVersion(Android.buildToolsVersion)
@@ -51,6 +52,11 @@ dependencies {
     implementation Libs.Common.glideCompiler
 
 
+    // Dagger
+    implementation Libs.Common.daggerHilt
+    implementation Libs.Common.daggerHiltCompiler
+    kapt Libs.Common.daggerHiltKotlin
+    kapt Libs.Common.daggerHiltLifecycle
     
     implementation(project(":domain"))
 

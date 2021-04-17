@@ -1,8 +1,8 @@
 package com.nar.bimito.utils
 
 object Constants {
-    const val BASE_URL = ""
-    const val DEBUG_BASE_URL = ""
+    const val BASE_URL = "https://bimito.com/bimito/"
+    const val DEBUG_BASE_URL = "https://bimito.com/bimito/"
     const val IMAGE_BASE_URL = ""
 
     const val CONNECT_TIME_OUT: Long = 30

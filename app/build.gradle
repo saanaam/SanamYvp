@@ -57,6 +57,7 @@ dependencies {
     implementation Libs.Common.retrofitGson
     implementation Libs.Common.okHttpInterceptor
     implementation Libs.Common.stetho
+    implementation Libs.Common.multiDex
 
     // Jetpack
     implementation Libs.Jetpack.lifecycleExtensions
@@ -82,6 +83,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":presentation"))
     implementation(project(":common"))
+    implementation(project(":domain"))
 
 
 }

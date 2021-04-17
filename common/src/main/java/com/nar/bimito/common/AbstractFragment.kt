@@ -10,8 +10,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.nar.bimito.common.state.ViewState
 import com.nar.bimito.common.util.showError
-import com.nar.bimito.common.util.showToast
-import com.nar.bimito.domain.util.isNotNull
 
 
 abstract class AbstractFragment<V : ViewState, T : AbstractViewModel<V>> : Fragment() {
@@ -19,11 +17,11 @@ abstract class AbstractFragment<V : ViewState, T : AbstractViewModel<V>> : Fragm
     protected abstract val layoutResId: Int
     protected abstract val  viewModel: T
     protected lateinit var navController: NavController
-    protected lateinit var activity: AbstractActivity
+    protected lateinit var myActivity: AbstractActivity
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        activity = (super.getActivity() as AbstractActivity)
+        myActivity = (super.getActivity() as AbstractActivity)
     }
 
     final override fun onCreateView(
@@ -33,7 +31,6 @@ abstract class AbstractFragment<V : ViewState, T : AbstractViewModel<V>> : Fragm
     ): View? {
         return inflater.inflate(layoutResId, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -52,15 +49,15 @@ abstract class AbstractFragment<V : ViewState, T : AbstractViewModel<V>> : Fragm
                 showError(errorState)
             }
             renderView(it)
-            if (it.navigation.isNotNull()) {
-                navController.navigate(it.navigation!!)
+            it.navigation?.let { nav ->
+                navController.navigate(nav)
             }
         })
     }
 
 
     fun onAuthenticationError() {
-        activity.authenticateAgain()
+        myActivity.authenticateAgain()
     }
 
     abstract fun renderView(state: V)

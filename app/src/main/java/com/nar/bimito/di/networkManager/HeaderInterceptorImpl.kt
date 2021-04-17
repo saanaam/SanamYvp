@@ -15,7 +15,6 @@ import javax.inject.Inject
 class HeaderInterceptorImpl @Inject constructor(
     private val accountManager: AccountManager,
     @ApplicationContext private val context: Context
-
 ) : HeaderInterceptor {
     override fun buildHeaderInterceptor(): OkHttpClient {
         val httpClient = OkHttpClient.Builder()

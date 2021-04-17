@@ -48,6 +48,11 @@ open class SingleLiveEvent<T> : MediatorLiveData<T>() {
         super.setValue(t)
     }
 
+    override fun postValue(value: T?) {
+        observers.forEach { it.newValue() }
+        super.postValue(value)
+    }
+
     private class ObserverWrapper<T>(val observer: Observer<T>) : Observer<T> {
 
         private var pending = false

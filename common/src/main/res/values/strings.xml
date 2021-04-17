@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="timer_format">%d:%d</string>
-    <string name="all_error_happens" >""</string>
-    <string name="all_copy_clipboard_message" >""</string>
+    <string name="all_copy_clipboard_message">%s در کلیپ‌بورد کپی شد</string>
+    <string name="exception_unknown_message">sample exception</string>
+    <string name="exception_network_unavailable_message">network unavailable</string>
+    <string name="exception_network_unavailable_title">network unavailable</string>
+    <string name="exception_illegal_data_message">illegal data exception</string>
+    <string name="exception_authorization_message">authorization failed</string>
+    <string name="exception_authorization_title">authorization failed</string>
+    <string name="exception_unknown_title">unknown title</string>
+    <string name="all_error_happens">errors</string>
+    <string name="all_retry">retry</string>
+    <string name="all_confirm">applt</string>
+    <string name="exception_invalid_perisan_date_message">invalid persian date</string>
 </resources>

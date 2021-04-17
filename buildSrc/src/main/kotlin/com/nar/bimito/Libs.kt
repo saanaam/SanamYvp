@@ -44,7 +44,7 @@ object Libs {
         const val arrowMeta = "io.arrow-kt:arrow-meta:${Versions.arrow}"
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-        const val moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
+        const val moshi = "com.squareup.retrofit2:converter-moshi:${Versions.moshi}"
         const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
         const val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
         const val stetho = "com.facebook.stetho:stetho:${Versions.stetho}"
@@ -56,8 +56,9 @@ object Libs {
         const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
         const val daggerHiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltCompiler}"
         const val daggerHiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.daggerHiltLifeCycle}"
-        // When using Kotlin
-        const val daggerHiltKotlin = "androidx.hilt:hilt-compiler:1.0.0-beta01"
+        const val daggerHiltKotlin = "androidx.hilt:hilt-compiler:${Versions.daggerHiltKotlin}"
+        const val multiDex = "com.android.support:multidex:${Versions.multiDex}"
+
 
 
     }

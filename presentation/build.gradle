@@ -58,6 +58,7 @@ dependencies {
     implementation Libs.Common.arrowSyntax
     implementation Libs.Common.glide
     implementation Libs.Common.glideCompiler
+    implementation Libs.Common.mapStruct
     kapt Libs.Common.arrowMeta
 
     // Dagger
@@ -65,6 +66,8 @@ dependencies {
     implementation Libs.Common.daggerHiltCompiler
     kapt Libs.Common.daggerHiltKotlin
     kapt Libs.Common.daggerHiltLifecycle
+    // hilt
+//    kapt 'androidx.hilt:hilt-compiler:1.0.0-beta01'
 
     // Test Dependencies
     testImplementation Libs.Testing.junit

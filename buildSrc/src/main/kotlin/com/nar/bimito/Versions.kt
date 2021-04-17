@@ -31,7 +31,10 @@ object Versions {
     const val mapStructVersion = "1.3.1.Final"
     const val KotlinMapStructVersion = "1.3.1.1"
     const val javaxInjectVersion = "1"
-//    const val kotlinVersion = "1.4.30"
+    const val moshi = "2.4.0"
+    const val daggerHiltKotlin = "1.0.0-beta01"
+    const val multiDex = "2.0.1"
+
 
 
 }

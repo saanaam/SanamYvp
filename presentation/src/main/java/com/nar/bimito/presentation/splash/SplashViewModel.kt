@@ -9,12 +9,10 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle
-) :
-    AbstractViewModel<SplashState>(SplashState()) {
-
-    fun startNavigation() {
+) : AbstractViewModel<SplashState>(
+    SplashState()
+) {
+    fun gotoMain() {
         _viewState.value = SplashState(navigation = SplashFragmentDirections.actionSplashToMain())
     }
-
-
 }

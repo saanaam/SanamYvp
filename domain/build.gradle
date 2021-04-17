@@ -4,7 +4,7 @@ import com.nar.bimito.Libs
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dagger.hilt.android.plugin'
 android {
 
     compileSdkVersion(Android.compileSdkVersion)
@@ -39,7 +39,6 @@ dependencies {
 
 
     implementation Libs.Jetpack.material
-
     implementation Libs.Common.kotlin
     implementation Libs.Common.coroutines
     implementation Libs.Common.coroutinesAndroid
@@ -48,6 +47,11 @@ dependencies {
     implementation Libs.Common.javaxInject
 
 
+    // Dagger
+    implementation Libs.Common.daggerHilt
+    implementation Libs.Common.daggerHiltCompiler
+    kapt Libs.Common.daggerHiltKotlin
+    kapt Libs.Common.daggerHiltLifecycle
 
 
 }

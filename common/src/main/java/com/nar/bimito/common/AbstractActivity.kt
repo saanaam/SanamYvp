@@ -1,13 +1,10 @@
 package com.nar.bimito.common
 
-import android.os.Bundle
-import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 abstract class AbstractActivity : AppCompatActivity() {
 
     companion object {
