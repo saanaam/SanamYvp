@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--   region  global -->
-    <string name="all_copy_clipboard_message">%s در کلیپ‌بورد کپی شد</string>
-    <string name="all_tools_sample_medium_text">
-لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-</string>
-    <string name="all_tools_sample_small_text">لورم ایپسوم متن ساختگی با تولید سادگ</string>
-    <string name="all_tools_sample_large_text">
-لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-</string>
+
     <string name="exception_unknown_message">sample exception</string>
     <string name="exception_network_unavailable_message">network unavailable</string>
     <string name="exception_network_unavailable_title">network unavailable</string>

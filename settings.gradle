@@ -3,4 +3,4 @@ include ':app'
 include ':data'
 include ':domain'
 include ':presentation'
-rootProject.name = "BimitoCustomer"
+rootProject.name = "yavarpour"

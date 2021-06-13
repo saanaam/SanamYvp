@@ -1,4 +1,4 @@
-import com.nar.bimito.Libs
+import com.sanam.yavarpour.Libs
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {

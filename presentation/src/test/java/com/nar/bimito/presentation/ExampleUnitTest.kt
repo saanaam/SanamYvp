@@ -1,4 +1,4 @@
-package com.nar.bimito.presentation
+package com.sanam.yavarpour.presentation
 
 import org.junit.Test
 

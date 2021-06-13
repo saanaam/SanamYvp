@@ -1,4 +1,4 @@
-package com.nar.bimito.common
+package com.sanam.yavarpour.common
 
 import org.junit.Test
 

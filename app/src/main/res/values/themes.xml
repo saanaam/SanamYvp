@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BimitoCustomer" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.yavarpour" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -8,12 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.BimitoCustomer.NoActionBar">
+    <style name="Theme.yavarpour.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.BimitoCustomer.AppBarOverlay" parent="Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="Theme.yavarpour.AppBarOverlay" parent="Theme.AppCompat.DayNight.NoActionBar" />
 
-    <style name="Theme.BimitoCustomer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.yavarpour.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

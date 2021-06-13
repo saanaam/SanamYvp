@@ -1,5 +1,5 @@
-import com.nar.bimito.Android
-import com.nar.bimito.Libs
+import com.sanam.yavarpour.Android
+import com.sanam.yavarpour.Libs
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'

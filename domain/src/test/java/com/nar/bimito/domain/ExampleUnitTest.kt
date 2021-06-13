@@ -1,4 +1,4 @@
-package com.nar.bimito.domain
+package com.sanam.yavarpour.domain
 
 import org.junit.Test
 
