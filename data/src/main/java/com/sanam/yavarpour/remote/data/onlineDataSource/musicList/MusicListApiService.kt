@@ -15,7 +15,12 @@ class MusicListApiService @Inject constructor(
             add(MusicListResponseDto(2, "No Promisses", "jojo", "4:00"))
             add(MusicListResponseDto(3, "I dont wanna Grow Up ", "Bebe Rexha", "2:00"))
             add(MusicListResponseDto(4, "Hands to myself", "selena", "3:00"))
-            add(MusicListResponseDto(5, "I Dont care", "Sheeran", "3:00"))
+            add(MusicListResponseDto(5, "Hands to myself", "selena", "3:00"))
+            add(MusicListResponseDto(6, "No Roots", "Sia", "3:00"))
+            add(MusicListResponseDto(7, "I Dont care", "Sheeran", "3:00"))
+            add(MusicListResponseDto(8, "I Can stand", "Sheeran", "3:00"))
+            add(MusicListResponseDto(9, "I Believe in", "Sheeran", "3:00"))
+            add(MusicListResponseDto(10, "Do not lie :)", "Shakira", "3:00"))
         }
         return ArrayList<MusicListResponse>().apply {
             for (items in mockData) {

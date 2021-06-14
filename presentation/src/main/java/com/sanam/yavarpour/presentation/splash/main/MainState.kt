@@ -6,7 +6,7 @@ import com.sanam.yavarpour.common.state.ViewState
 import com.sanam.yavarpour.presentation.splash.main.model.MusicListModel
 
 data class MainState(
-    var data: MusicListModel? = null,
+    var data: ArrayList<MusicListModel>? = null,
     override val error: ErrorState? = null,
     override val navigation: NavDirections? = null
 ) : ViewState
