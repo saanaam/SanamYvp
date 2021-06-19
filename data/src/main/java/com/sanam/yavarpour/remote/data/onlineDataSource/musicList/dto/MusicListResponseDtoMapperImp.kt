@@ -5,8 +5,7 @@ import javax.inject.Inject
 
 class MusicListResponseDtoMapperImp @Inject() constructor() : MusicListResponseDtoMapper {
     override fun mapToData(dto: MusicListResponseDto?): MusicListResponse {
-        return MusicListResponse(dto?.id , dto?.title,
-        dto?.Singer, dto?.time)
+        return MusicListResponse(dto?.id , dto?.file)
     }
 
 }

@@ -4,29 +4,28 @@ import androidx.lifecycle.SavedStateHandle
 import com.sanam.yavarpour.common.AbstractViewModel
 import com.sanam.yavarpour.common.state.ErrorState
 import com.sanam.yavarpour.domain.usecase.appVersion.usecase.MusicListUseCase
-import com.sanam.yavarpour.presentation.splash.main.model.AppVersionPresentationMapper
-import com.sanam.yavarpour.presentation.splash.main.model.MusicListModel
+import com.sanam.yavarpour.presentation.splash.main.model.musicListPresentationMapper
+import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val appVersionPresentationMapper: AppVersionPresentationMapper,
-    private val appVersionUseCase: MusicListUseCase,
+    private val musicListPresentationMapper: musicListPresentationMapper,
+    private val musicListUseCase: MusicListUseCase,
 ) : AbstractViewModel<MainState>(
     MainState()
 ) {
 
-    fun getAppVersion() {
-        appVersionUseCase.perform() {
+    fun getMusicList() {
+        musicListUseCase.perform() {
             onSuccess = { it->
                 this.onSuccess
-                //TODO change the data type
-                val data = ArrayList<MusicListModel>()
+                val data = ArrayList<MusicItemModel>()
                 for (item in it.data) {
-                    appVersionPresentationMapper.toPresentation(item)
-                   data.add(appVersionPresentationMapper.toPresentation(item))
+                    musicListPresentationMapper.toPresentation(item)
+                   data.add(musicListPresentationMapper.toPresentation(item))
                 }
                 _viewState.postValue(
                     MainState(data = data)
@@ -47,7 +46,11 @@ class MainViewModel @Inject constructor(
 
     override fun clearViewModel() {
         super.clearViewModel()
-        appVersionUseCase.dispose()
+        musicListUseCase.dispose()
+    }
+
+    fun setPlayStatus(b: Boolean) {
+
     }
 
 }

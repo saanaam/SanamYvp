@@ -5,16 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sanam.yavarpour.presentation.R
-import com.sanam.yavarpour.presentation.splash.main.model.MusicListModel
+import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
 import kotlinx.android.synthetic.main.holder_song.view.*
-import java.io.File
 import kotlin.properties.Delegates
 
 
 internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-        var songs: List<MusicListModel> by Delegates.observable(emptyList()) { _, _, _ ->
+    var songs: List<MusicItemModel> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
     }
 
@@ -35,7 +34,7 @@ internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
         (holder as SongViewHolder).onBind(getItem(position))
     }
 
-    private fun getItem(position: Int): MusicListModel {
+    private fun getItem(position: Int): MusicItemModel {
         return songs[position]
     }
 
@@ -46,12 +45,15 @@ internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
         return songs.size
     }
 
+
+    fun getItems() = songs
+
     inner class SongViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        fun onBind(song: MusicListModel) {
-            itemView.music_item_name_text_view.text = song.title ?: ""
+        fun onBind(song: MusicItemModel) {
+            itemView.music_item_name_text_view.text = song.file.toString() ?: ""
             itemView.setOnClickListener {
-                mListener.playSong(song, songs as ArrayList<MusicListModel>)
+                mListener.playSong(song,adapterPosition)
             }
 
         }

@@ -46,12 +46,16 @@ dependencies {
     implementation Libs.Common.kotlinMapStruct
     implementation Libs.Common.javaxInject
 
-
     // Dagger
     implementation Libs.Common.daggerHilt
     implementation Libs.Common.daggerHiltCompiler
     kapt Libs.Common.daggerHiltKotlin
     kapt Libs.Common.daggerHiltLifecycle
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
+}
+repositories {
+    mavenCentral()
 }

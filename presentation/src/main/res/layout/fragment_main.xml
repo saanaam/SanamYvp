@@ -20,11 +20,11 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="370dp"
-            android:background="@android:color/white"
+            android:background="@color/colorAccent"
             android:theme="@style/Theme.AppCompat"
-            app:contentScrim="@color/colorPrimaryDark"
+            app:contentScrim="@color/colorAccent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:statusBarScrim="@color/colorPrimary">
+            app:statusBarScrim="@color/colorAccent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
@@ -36,9 +36,9 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="120dp"
                 app:layout_collapseMode="pin"
-                app:titleTextColor="@android:color/white" />
+                app:titleTextColor="@color/teal_700" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -112,23 +112,31 @@
                     app:layout_constraintTop_toTopOf="@+id/song_player_toggle_image_view"
                     app:srcCompat="@drawable/ic_repeat_black_vector" />
 
-
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/music_name_text_view"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="select Music"
-                    android:visibility="gone"
                     android:layout_margin="8dp"
-                    android:padding="4dp"
                     android:gravity="center"
                     android:maxLines="1"
+                    android:visibility="gone"
                     android:textAlignment="center"
-                    android:textSize="@dimen/headline"
-                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/subheading1"
+                    android:textColor="@color/colorTextPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/song_player_toggle_image_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/song_player_progress_seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/song_player_shuffle_image_view"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/music_name_text_view" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

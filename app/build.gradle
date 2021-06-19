@@ -8,6 +8,7 @@ plugins {
     id "androidx.navigation.safeargs"
     id 'dagger.hilt.android.plugin'
 }
+apply plugin: 'kotlin-android'
 
 
 android {
@@ -84,6 +85,12 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":common"))
     implementation(project(":domain"))
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
+}
+repositories {
+    mavenCentral()
 }

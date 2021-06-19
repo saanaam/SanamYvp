@@ -1,10 +1,9 @@
 package com.sanam.yavarpour.domain.usecase.appVersion.model
 
+import android.content.res.AssetFileDescriptor
 import com.sanam.yavarpour.domain.Entity
 
 data class MusicListResponse(
-     var id: Int? = null,
-     var title: String? = null,
-     var Singer: String? = null,
-     var time: String? = null
+     val id: Int? = null,
+     val file: AssetFileDescriptor? = null
 ) : Entity
