@@ -8,5 +8,5 @@ import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
  *
  * */
 interface OnPlaylistAdapterListener {
-    fun playSong(song: MusicItemModel, songsPosition: Int)
+    fun onMusicItemClick(song: MusicItemModel, songsPosition: Int)
 }

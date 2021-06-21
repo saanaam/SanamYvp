@@ -34,7 +34,7 @@ internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
         (holder as SongViewHolder).onBind(getItem(position))
     }
 
-    private fun getItem(position: Int): MusicItemModel {
+    fun getItem(position: Int): MusicItemModel {
         return songs[position]
     }
 
@@ -53,7 +53,7 @@ internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
         fun onBind(song: MusicItemModel) {
             itemView.music_item_name_text_view.text = song.file.toString() ?: ""
             itemView.setOnClickListener {
-                mListener.playSong(song,adapterPosition)
+                mListener.onMusicItemClick(song,adapterPosition)
             }
 
         }

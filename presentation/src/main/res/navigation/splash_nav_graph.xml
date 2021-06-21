@@ -20,6 +20,11 @@
         android:label="main_fragment"
         android:name="com.sanam.yavarpour.presentation.splash.main.MusicListFragment"
         tools:layout="@layout/fragment_main">
+        <argument
+            android:name="stop"
+            app:argType="boolean"
+            android:defaultValue="false"
+            />
     </fragment>
 
 </navigation>

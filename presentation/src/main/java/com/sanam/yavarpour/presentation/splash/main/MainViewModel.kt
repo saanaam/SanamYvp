@@ -1,5 +1,7 @@
 package com.sanam.yavarpour.presentation.splash.main
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.sanam.yavarpour.common.AbstractViewModel
 import com.sanam.yavarpour.common.state.ErrorState
@@ -17,15 +19,30 @@ class MainViewModel @Inject constructor(
 ) : AbstractViewModel<MainState>(
     MainState()
 ) {
+    private val _isPlayData = MutableLiveData<Boolean>()
+    val isPlayData: LiveData<Boolean> = _isPlayData
+    private val _isPauseData = MutableLiveData<Boolean>()
+    val isPauseData: LiveData<Boolean> = _isPauseData
+    private val _playerData = MutableLiveData<Int>()
+    val playerData: LiveData<Int> = _playerData
 
-    fun getMusicList() {
-        musicListUseCase.perform() {
-            onSuccess = { it->
+    init {
+        _isPlayData.value = false
+        _isPauseData.value = false
+    }
+
+    fun updateSong(musicPosition: Int) {
+        _playerData.value = musicPosition
+    }
+
+    fun getMusicList(isPremium: Boolean) {
+        musicListUseCase.perform(isPremium) {
+            onSuccess = { it ->
                 this.onSuccess
                 val data = ArrayList<MusicItemModel>()
                 for (item in it.data) {
                     musicListPresentationMapper.toPresentation(item)
-                   data.add(musicListPresentationMapper.toPresentation(item))
+                    data.add(musicListPresentationMapper.toPresentation(item))
                 }
                 _viewState.postValue(
                     MainState(data = data)
@@ -49,8 +66,12 @@ class MainViewModel @Inject constructor(
         musicListUseCase.dispose()
     }
 
-    fun setPlayStatus(b: Boolean) {
+    fun setPlayStatus(playStatus: Boolean) {
+        _isPlayData.value = playStatus
+    }
 
+    fun setPauseStatus(pauseStatus: Boolean) {
+        _isPauseData.value = pauseStatus
     }
 
 }

@@ -15,5 +15,6 @@
     <string name="timer_format">%d:%d</string>
     <string name="all_yes">yes</string>
     <string name="all_no">no</string>
-    <string name="playing">در حال پخش آهنگ</string>
+    <string name="playing">Play Music</string>
+        <string name="stop">stop music</string>
 </resources>

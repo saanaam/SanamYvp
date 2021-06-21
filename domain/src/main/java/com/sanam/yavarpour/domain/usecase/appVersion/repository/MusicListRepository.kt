@@ -1,8 +1,8 @@
 package com.sanam.yavarpour.domain.usecase.appVersion.repository
 
 import com.sanam.yavarpour.domain.Repository
-import com.sanam.yavarpour.domain.usecase.appVersion.model.MusicListResponse
+import com.sanam.yavarpour.domain.usecase.appVersion.model.MusicModel
 
 interface MusicListRepository : Repository{
-    suspend fun getMusicList(): ArrayList<MusicListResponse>
+    suspend fun getMusicList(isPremium : Boolean): ArrayList<MusicModel>
 }
