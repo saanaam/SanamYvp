@@ -11,7 +11,12 @@ class MusicListUseCase @Inject constructor(
     private val musicListRepository: MusicListRepository
 ) : SingleUseCase<Boolean, ArrayList<MusicModel>>() {
     override suspend fun task(isPremium: Boolean): UseCaseResult<ArrayList<MusicModel>> {
-        return UseCaseResult(data = musicListRepository.getMusicList(isPremium))
+        return if (isPremium) {
+            UseCaseResult(data = musicListRepository.getMusicList(isPremium))
+        } else {
+            //TODO turn as a shuffle list and it must upper than 5
+            UseCaseResult(data = musicListRepository.getMusicList(isPremium))
+        }
     }
 
 }

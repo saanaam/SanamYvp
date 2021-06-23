@@ -1,7 +1,6 @@
 package com.sanam.yavarpour.di
 
-import com.sanam.database.dto.MusicModelDtoMapper
-import com.sanam.database.dto.MusicModelDtoMapperI
+import com.sanam.database.dto.mapper.*
 import com.sanam.yavarpour.local.repository.MusicListDataRepository
 import dagger.Binds
 import dagger.Module
@@ -23,6 +22,17 @@ abstract class ApplicationRepositoryModule {
     abstract fun provideAppVersionResponseDtoMapperImp(
         musicModelDtoMapper: MusicModelDtoMapper
     ): MusicModelDtoMapperI
+
+    @Binds
+    abstract fun provideACurrentMusicStateModelDtoMapper(
+        currentMusicStateModelDtoMapper: CurrentMusicStateModelDtoMapper
+    ): CurrentMusicStateModelDtoMapperI
+
+
+    @Binds
+    abstract fun providePlayingMusicModelDtoMapper(
+        playingMusicModelDtoMapper: PlayingMusicModelDtoMapper
+    ): PlayingMusicModelDtoMapperI
 
 
 }
