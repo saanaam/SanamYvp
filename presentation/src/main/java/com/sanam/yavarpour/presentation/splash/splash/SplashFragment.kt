@@ -12,9 +12,6 @@ import kotlinx.android.synthetic.main.fragment_splash.*
 
 @AndroidEntryPoint
 class SplashFragment : AbstractFragment<SplashState, SplashViewModel>() {
-    companion object {
-        private const val SPLASH_DELAY = 2000L
-    }
 
     private val splashViewModel: SplashViewModel by viewModels()
     override val viewModel: SplashViewModel
@@ -25,14 +22,13 @@ class SplashFragment : AbstractFragment<SplashState, SplashViewModel>() {
     override fun initViews(view: View, savedInstanceState: Bundle?) {
         super.initViews(view, savedInstanceState)
         setImageResourceCompat(splash_image_view, R.drawable.splash)
-        Handler().postDelayed({
-            viewModel.gotoMain()
-        }, SPLASH_DELAY)
+        viewModel.setMusicList(true)
     }
 
     override fun renderView(state: SplashState) {
-
+        state.navigation?.let { nav ->
+            navController.navigate(nav)
+        }
     }
-
 
 }

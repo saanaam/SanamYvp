@@ -1,11 +1,11 @@
 package com.sanam.yavarpour.presentation.splash.main.model
 
-import com.sanam.yavarpour.domain.usecase.appVersion.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
 import javax.inject.Inject
 
-class AppVersionPresentationMapperImp @Inject constructor() :musicListPresentationMapper{
+class AppVersionPresentationMapperImp @Inject constructor() : MusicListPresentationMapper {
     override fun toPresentation(entity: MusicModel): MusicItemModel {
-        return MusicItemModel(entity.id , entity.file)
+        return MusicItemModel(entity.id)
     }
 
 }

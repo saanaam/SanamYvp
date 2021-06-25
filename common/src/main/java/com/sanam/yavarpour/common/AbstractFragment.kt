@@ -1,11 +1,7 @@
 package com.sanam.yavarpour.common
 
-import android.content.ComponentName
 import android.content.Context
-import android.content.Intent
-import android.content.ServiceConnection
 import android.os.Bundle
-import android.os.IBinder
 import android.view.*
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment

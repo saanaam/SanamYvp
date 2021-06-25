@@ -1,16 +1,26 @@
 package com.sanam.database.dto.mapper
 
 import com.sanam.database.dto.PlayingMusicModelDto
-import com.sanam.yavarpour.domain.usecase.appVersion.model.PlayingMusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.model.PlayingMusicModel
+import javax.inject.Inject
 
-class PlayingMusicModelDtoMapper : PlayingMusicModelDtoMapperI {
-    override fun mapToData(dto: PlayingMusicModelDto?) =
-        PlayingMusicModel(
-            dto!!.id,
-            dto.songName,
-            dto.artist,
-            dto.popularity,
-            dto.constructorYear,
-            dto.duration,
-        )
+class PlayingMusicModelDtoMapper @Inject constructor(): PlayingMusicModelDtoMapperI {
+    override fun mapToData(playingMusicModelDto: ArrayList<PlayingMusicModelDto>?): ArrayList<PlayingMusicModel> {
+        var list = ArrayList<PlayingMusicModel>()
+        for (item in playingMusicModelDto!!) {
+            list = ArrayList<PlayingMusicModel>().apply {
+                add(
+                    PlayingMusicModel(
+                        item.id,
+                        item.songName,
+                        item.artist,
+                        item.duration,
+                    )
+                )
+            }
+        }
+        return list
+    }
+
+
 }

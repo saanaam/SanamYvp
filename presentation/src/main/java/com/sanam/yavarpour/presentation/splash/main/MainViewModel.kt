@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.sanam.yavarpour.common.AbstractViewModel
 import com.sanam.yavarpour.common.state.ErrorState
-import com.sanam.yavarpour.domain.usecase.appVersion.usecase.MusicListUseCase
-import com.sanam.yavarpour.presentation.splash.main.model.musicListPresentationMapper
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.GetMusicListUseCase
+import com.sanam.yavarpour.presentation.splash.main.model.MusicListPresentationMapper
 import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -14,8 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val musicListPresentationMapper: musicListPresentationMapper,
-    private val musicListUseCase: MusicListUseCase,
+    private val getMusicListUseCase: GetMusicListUseCase,
+    private val musicListPresentationMapper: MusicListPresentationMapper,
 ) : AbstractViewModel<MainState>(
     MainState()
 ) {
@@ -35,8 +35,8 @@ class MainViewModel @Inject constructor(
         _playerData.value = musicPosition
     }
 
-    fun getMusicList(isPremium: Boolean) {
-        musicListUseCase.perform(isPremium) {
+    fun getMusicList() {
+        getMusicListUseCase.perform() {
             onSuccess = { it ->
                 this.onSuccess
                 val data = ArrayList<MusicItemModel>()
@@ -63,7 +63,7 @@ class MainViewModel @Inject constructor(
 
     override fun clearViewModel() {
         super.clearViewModel()
-        musicListUseCase.dispose()
+        getMusicListUseCase.dispose()
     }
 
     fun setPlayStatus(playStatus: Boolean) {

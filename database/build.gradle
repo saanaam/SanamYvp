@@ -1,3 +1,4 @@
+import com.sanam.yavarpour.Android
 import com.sanam.yavarpour.Libs
 
 plugins {
@@ -7,15 +8,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion(Android.compileSdkVersion)
+    buildToolsVersion(Android.buildToolsVersion)
+
 
     defaultConfig {
-        applicationId "com.sanam.database"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion(Android.minSdkVersion)
+        targetSdkVersion(Android.targetSdkVersion)
+        versionCode = Android.versionCode
+        versionName = Android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

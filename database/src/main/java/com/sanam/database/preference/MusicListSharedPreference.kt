@@ -6,11 +6,11 @@ import com.sanam.database.AbstractSharedPreferences
 import com.sanam.database.dto.CurrentMusicStateModelDto
 import com.sanam.database.dto.MusicModelDto
 import com.sanam.database.dto.PlayingMusicModelDto
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class MusicListSharedPreference @Inject constructor(context: Context) :
-    AbstractSharedPreferences(context), UserPreference<Array<MusicModelDto>> {
-
+class MusicListSharedPreference @Inject constructor(@ApplicationContext context: Context) :
+    AbstractSharedPreferences(context), UserPreference {
     override fun getMusicList(): Array<MusicModelDto> {
         val gson = Gson()
         val jsonText: String? = sharedPreferences.getString(PARAM_KEY, "")
@@ -20,13 +20,12 @@ class MusicListSharedPreference @Inject constructor(context: Context) :
         )
     }
 
-    override fun setMusicList(value: Array<MusicModelDto>, isPremium: Boolean) {
+    override fun setMusicList(isPremium: Boolean) {
         val gson = Gson()
         val json: String = if (isPremium) {
-            gson.toJson(value)
+            gson.toJson(MusicListMockData().musicList())
         } else {
-            //TODO Shuffle
-            gson.toJson(value)
+            gson.toJson(MusicListMockData().musicList().shuffle())
         }
         sharedPreferences.edit()
             .putString(PARAM_KEY, json)
@@ -34,26 +33,18 @@ class MusicListSharedPreference @Inject constructor(context: Context) :
     }
 
     override fun setPlayingMusic(currentMusicId: Int) {
-        val gson = Gson()
-        val json: String = gson.toJson(currentMusicId)
         sharedPreferences.edit()
-            .putString(CURRENT_MUSIC_KEY, json)
+            .putInt(CURRENT_MUSIC_KEY, currentMusicId)
             .apply()
     }
 
-    override fun getPlayingMusic(): PlayingMusicModelDto {
-        //TODO set mock data and find the data list
-        val gson = Gson()
-        val jsonText: String? = sharedPreferences.getString(CURRENT_MUSIC_KEY, "")
-        return gson.fromJson(
-            jsonText,
-            PlayingMusicModelDto::class.java
-        )
+    override fun getPlayingMusic(): Int {
+        return sharedPreferences.getInt(CURRENT_MUSIC_KEY, 0)
     }
 
-    override fun setCurrentMusicStateModel(item: CurrentMusicStateModelDto) {
+    override fun setCurrentMusicStateModel(currentMusicState: CurrentMusicStateModelDto) {
         val gson = Gson()
-        val json: String = gson.toJson(item)
+        val json: String = gson.toJson(currentMusicState)
         sharedPreferences.edit()
             .putString(MUSIC_STATE_KEY, json)
             .apply()
@@ -68,11 +59,20 @@ class MusicListSharedPreference @Inject constructor(context: Context) :
         )
     }
 
+    override fun updateMusicList(musicList: ArrayList<MusicModelDto>) {
+        val gson = Gson()
+        val json: String = gson.toJson(MusicListMockData().musicList())
+        sharedPreferences.edit()
+            .putString(PARAM_KEY, json)
+            .apply()
+    }
+
 
     companion object {
         private const val PARAM_KEY = "premium_key"
         private const val CURRENT_MUSIC_KEY = "current_music_key"
         private const val MUSIC_STATE_KEY = "music_state_key"
     }
+
 
 }

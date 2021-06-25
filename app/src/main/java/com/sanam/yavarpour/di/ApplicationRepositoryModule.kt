@@ -1,11 +1,13 @@
 package com.sanam.yavarpour.di
 
 import com.sanam.database.dto.mapper.*
-import com.sanam.yavarpour.local.repository.MusicListDataRepository
+import com.sanam.yavarpour.local.repository.MusicListControllerDataRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import com.sanam.yavarpour.domain.usecase.appVersion.repository.MusicListRepository
+import com.sanam.yavarpour.domain.usecase.musicPlayer.repository.MusicListControllerRepository
+import com.sanam.yavarpour.presentation.splash.main.model.AppVersionPresentationMapperImp
+import com.sanam.yavarpour.presentation.splash.main.model.MusicListPresentationMapper
 import dagger.hilt.android.components.ViewModelComponent
 
 @Module
@@ -14,8 +16,8 @@ abstract class ApplicationRepositoryModule {
 
     @Binds
     abstract fun provideAppVersionDataRepository(
-        appVersionDataRepository: MusicListDataRepository
-    ): MusicListRepository
+        appVersionDataRepository: MusicListControllerDataRepository
+    ): MusicListControllerRepository
 
 
     @Binds
@@ -33,6 +35,12 @@ abstract class ApplicationRepositoryModule {
     abstract fun providePlayingMusicModelDtoMapper(
         playingMusicModelDtoMapper: PlayingMusicModelDtoMapper
     ): PlayingMusicModelDtoMapperI
+
+
+    @Binds
+    abstract fun provideMusicListPresentationMapper(
+        appVersionPresentationMapperImp: AppVersionPresentationMapperImp
+    ): MusicListPresentationMapper
 
 
 }

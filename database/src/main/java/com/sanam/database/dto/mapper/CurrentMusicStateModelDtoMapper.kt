@@ -1,9 +1,10 @@
 package com.sanam.database.dto.mapper
 
 import com.sanam.database.dto.CurrentMusicStateModelDto
-import com.sanam.yavarpour.domain.usecase.appVersion.model.CurrentMusicStateModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.model.CurrentMusicStateModel
+import javax.inject.Inject
 
-class CurrentMusicStateModelDtoMapper : CurrentMusicStateModelDtoMapperI {
+class CurrentMusicStateModelDtoMapper @Inject constructor() : CurrentMusicStateModelDtoMapperI {
     override fun mapToData(dto: CurrentMusicStateModel?) =
         CurrentMusicStateModelDto(
             dto!!.id,

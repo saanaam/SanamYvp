@@ -110,11 +110,11 @@ class MusicService : Service(),
         try {
             player?.stop()
             player?.reset()
-            player?.setDataSource(
-                playSong.file!!.fileDescriptor,
-                playSong.file.startOffset,
-                playSong.file.length
-            )
+//            player?.setDataSource(
+//                playSong.file!!.fileDescriptor,
+//                playSong.file.startOffset,
+//                playSong.file.length
+//            )
             player?.prepare()
             player?.start()
         } catch (e: IOException) {

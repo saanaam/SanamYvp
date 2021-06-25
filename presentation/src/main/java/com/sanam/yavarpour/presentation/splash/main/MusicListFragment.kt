@@ -15,7 +15,6 @@ import com.sanam.yavarpour.common.util.show
 import com.sanam.yavarpour.presentation.R
 import com.sanam.yavarpour.presentation.splash.main.adapter.OnPlaylistAdapterListener
 import com.sanam.yavarpour.presentation.splash.main.adapter.PlaylistAdapter
-import com.sanam.yavarpour.presentation.splash.main.controller.MusicController
 import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
 import com.sanam.yavarpour.presentation.splash.main.service.MusicService
 import com.sanam.yavarpour.presentation.splash.main.service.NotificationReceiver
@@ -28,8 +27,7 @@ class MusicListFragment : AbstractFragment<MainState, MainViewModel>(), OnPlayli
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var playListAdapter: PlaylistAdapter? = null
     private val mainViewModel by viewModels<MainViewModel>()
-//    private lateinit var mediaController: MusicController
-    val musicService = MusicService()
+//    val musicService = MusicService()
 
     val args: MusicListFragmentArgs by navArgs()
     private var mReceiver: BroadcastReceiver = NotificationReceiver()
@@ -48,8 +46,8 @@ class MusicListFragment : AbstractFragment<MainState, MainViewModel>(), OnPlayli
         mainViewModel.getMusicList()
         initRecyclerview()
         initButtons()
-        if (args.stop)
-            context?.stopService(Intent(context, MusicService::class.java))
+//        if (args.stop)
+//            context?.stopService(Intent(context, MusicService::class.java))
 
     }
 
@@ -85,7 +83,7 @@ class MusicListFragment : AbstractFragment<MainState, MainViewModel>(), OnPlayli
     override fun renderView(state: MainState) {
         state.data?.let {
             playListAdapter!!.songs = it
-            musicService.setPlayList(playListAdapter!!.getItems() as ArrayList<MusicItemModel?>)
+//            musicService.setPlayList(playListAdapter!!.getItems() as ArrayList<MusicItemModel?>)
         }
 
         viewModel.isPlayData.observe(this@MusicListFragment, {
@@ -113,10 +111,10 @@ class MusicListFragment : AbstractFragment<MainState, MainViewModel>(), OnPlayli
             text = playListAdapter?.getItem(position).toString()
         }
         if (mainViewModel.isPauseData.value == true) {
-            musicService.resume()
+//            musicService.resume()
             viewModel.setPauseStatus(false)
         } else {
-            musicService.play(position)
+//            musicService.play(position)
         }
         viewModel.updateSong(position)
         viewModel.setPlayStatus(true)
@@ -128,7 +126,7 @@ class MusicListFragment : AbstractFragment<MainState, MainViewModel>(), OnPlayli
     private fun pause() {
         viewModel.setPlayStatus(false)
         viewModel.setPauseStatus(true)
-        musicService.pause()
+//        musicService.pause()
     }
 
     override fun onStart() {

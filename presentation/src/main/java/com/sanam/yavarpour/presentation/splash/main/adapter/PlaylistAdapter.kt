@@ -51,9 +51,9 @@ internal class PlaylistAdapter(val mListener: OnPlaylistAdapterListener) :
     inner class SongViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun onBind(song: MusicItemModel) {
-            itemView.music_item_name_text_view.text = song.file.toString() ?: ""
+            itemView.music_item_name_text_view.text = "music Number : $song.id "
             itemView.setOnClickListener {
-                mListener.onMusicItemClick(song,adapterPosition)
+                mListener.onMusicItemClick(song, adapterPosition)
             }
 
         }
