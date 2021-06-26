@@ -26,11 +26,6 @@ class MusicListControllerLocalDataSource @Inject constructor(
 
     override suspend fun getPlayingMusic() = preference.getPlayingMusic()
 
-    override suspend fun updateMusicList(musicList: ArrayList<MusicModel>) =
-        preference.updateMusicList(
-            musicList = musicModelDtoMapper.mapToModel(musicList)
-        )
-
     override suspend fun updatePlayingMusic(currentMusicId: Int) =
         preference.setPlayingMusic(currentMusicId)
 

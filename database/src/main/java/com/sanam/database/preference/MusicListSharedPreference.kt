@@ -11,6 +11,7 @@ import javax.inject.Inject
 
 class MusicListSharedPreference @Inject constructor(@ApplicationContext context: Context) :
     AbstractSharedPreferences(context), UserPreference {
+
     override fun getMusicList(): Array<MusicModelDto> {
         val gson = Gson()
         val jsonText: String? = sharedPreferences.getString(PARAM_KEY, "")
@@ -28,15 +29,14 @@ class MusicListSharedPreference @Inject constructor(@ApplicationContext context:
             .apply()
     }
 
-    override fun setPlayingMusic(currentMusicId: Int) {
+    override fun setPlayingMusic(playingMusicId: Int) {
         sharedPreferences.edit()
-            .putInt(CURRENT_MUSIC_KEY, currentMusicId)
+            .putInt(CURRENT_MUSIC_KEY, playingMusicId)
             .apply()
     }
 
-    override fun getPlayingMusic(): Int {
-        return sharedPreferences.getInt(CURRENT_MUSIC_KEY, 0)
-    }
+    override fun getPlayingMusic() = sharedPreferences.getInt(CURRENT_MUSIC_KEY, 0)
+
 
     override fun setCurrentMusicStateModel(currentMusicStateModelDto: CurrentMusicStateModelDto) {
         val gson = Gson()
@@ -53,14 +53,6 @@ class MusicListSharedPreference @Inject constructor(@ApplicationContext context:
             jsonText,
             CurrentMusicStateModelDto::class.java
         )
-    }
-
-    override fun updateMusicList(musicList: ArrayList<MusicModelDto>) {
-        val gson = Gson()
-        val json: String = gson.toJson(MusicListMockData().musicList())
-        sharedPreferences.edit()
-            .putString(PARAM_KEY, json)
-            .apply()
     }
 
     companion object {

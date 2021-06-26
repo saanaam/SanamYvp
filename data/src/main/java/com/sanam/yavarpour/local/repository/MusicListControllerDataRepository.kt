@@ -76,13 +76,11 @@ class MusicListControllerDataRepository @Inject constructor(
         }
     }
 
-    override suspend fun addMusicToQue(musicId: Int) {
+    override suspend fun addMusicToQue(musicId: Int) : ArrayList<MusicModel> {
         val musicList = musicListControllerDataSource.getMusicList()
         val currentMusicIndex = musicList.indexOf((getPlayingMusic()?.id!!))
         musicList.add(currentMusicIndex + 1, MusicModel(musicId))
-        musicListControllerDataSource.updateMusicList(musicList)
-
+        return musicList
     }
-
 
 }

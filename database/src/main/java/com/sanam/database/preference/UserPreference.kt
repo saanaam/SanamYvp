@@ -8,9 +8,8 @@ import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
 interface UserPreference : Preferences {
     fun getMusicList(): Array<MusicModelDto>
     fun setMusicList(musicList: ArrayList<MusicModel>)
-    fun updateMusicList(musicList: ArrayList<MusicModelDto>)
-    fun setPlayingMusic(item: Int)
+    fun setPlayingMusic(playingMusicId: Int)
     fun getPlayingMusic(): Int
-    fun setCurrentMusicStateModel(item: CurrentMusicStateModelDto)
+    fun setCurrentMusicStateModel(currentMusicStateModelDto: CurrentMusicStateModelDto)
     fun getCurrentMusicStateModel(): CurrentMusicStateModelDto
 }

@@ -22,6 +22,6 @@ interface MusicListControllerRepository : Repository {
 
     suspend fun updateMusicState(item: CurrentMusicStateModel)
     suspend fun getLatestMusicState(): CurrentMusicStateModel
-    suspend fun addMusicToQue(musicId: Int)
+    suspend fun addMusicToQue(musicId: Int): ArrayList<MusicModel>
 
 }
