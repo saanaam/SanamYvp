@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.sanam.yavarpour.common.AbstractViewModel
 import com.sanam.yavarpour.common.state.ErrorState
-import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.GetMusicListUseCase
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.GetMusicListUseCase
 import com.sanam.yavarpour.presentation.splash.main.model.MusicListPresentationMapper
 import com.sanam.yavarpour.presentation.splash.main.model.MusicItemModel
 import dagger.hilt.android.lifecycle.HiltViewModel

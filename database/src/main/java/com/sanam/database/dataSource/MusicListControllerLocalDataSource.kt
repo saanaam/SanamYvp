@@ -6,8 +6,8 @@ import com.sanam.database.dto.mapper.MusicModelDtoMapper
 import com.sanam.database.dto.mapper.PlayingMusicModelDtoMapper
 import com.sanam.database.preference.MusicListMockData
 import com.sanam.database.preference.MusicListSharedPreference
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.CurrentMusicStateModel
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicStateUseCase.model.CurrentMusicStateModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.model.MusicModel
 import com.sanam.yavarpour.local.localDataSource.MusicListControllerDataSource
 import javax.inject.Inject
 
@@ -18,11 +18,12 @@ class MusicListControllerLocalDataSource @Inject constructor(
     private val preference: MusicListSharedPreference
 ) : MusicListControllerDataSource {
 
-    override suspend fun getMusicList() = musicModelDtoMapper.mapToData(
+    override suspend fun getMusicList() = musicModelDtoMapper.mapToModel(
         preference.getMusicList() as ArrayList<MusicModelDto>
     )
 
-    override suspend fun setMusicList(musicList: ArrayList<MusicModel>) = preference.setMusicList(musicList)
+    override suspend fun setMusicList(musicList: ArrayList<MusicModel>) =
+        preference.setMusicList(musicModelDtoMapper.mapToData(musicList))
 
     override suspend fun getPlayingMusic() = preference.getPlayingMusic()
 

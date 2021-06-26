@@ -1,9 +1,9 @@
 package com.sanam.yavarpour.domain.usecase.musicPlayer.repository
 
 import com.sanam.yavarpour.domain.Repository
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.CurrentMusicStateModel
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.PlayingMusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicStateUseCase.model.CurrentMusicStateModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.playingMusicUseCase.model.PlayingMusicModel
 
 interface MusicListControllerRepository : Repository {
     suspend fun getMusicList(): ArrayList<MusicModel>

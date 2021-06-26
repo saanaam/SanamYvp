@@ -1,6 +1,6 @@
 package com.sanam.yavarpour
 
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.model.MusicModel
 
 
 class MusicListMock {

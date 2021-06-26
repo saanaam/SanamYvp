@@ -1,7 +1,7 @@
 package com.sanam.yavarpour.presentation.splash.main.model
 
 import com.sanam.yavarpour.common.PresentationMapper
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.model.MusicModel
 import org.mapstruct.Mapper
 
 @Mapper

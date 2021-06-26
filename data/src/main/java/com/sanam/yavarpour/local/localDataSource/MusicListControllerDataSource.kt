@@ -1,9 +1,9 @@
 package com.sanam.yavarpour.local.localDataSource
 
 import com.sanam.yavarpour.DataSource
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.CurrentMusicStateModel
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.PlayingMusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicStateUseCase.model.CurrentMusicStateModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.musicListUseCase.model.MusicModel
+import com.sanam.yavarpour.domain.usecase.musicPlayer.usecase.playingMusicUseCase.model.PlayingMusicModel
 
 interface MusicListControllerDataSource : DataSource {
     suspend fun getMusicList(): ArrayList<MusicModel>

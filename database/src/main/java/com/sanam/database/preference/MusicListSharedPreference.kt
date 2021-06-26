@@ -5,7 +5,6 @@ import com.google.gson.Gson
 import com.sanam.database.AbstractSharedPreferences
 import com.sanam.database.dto.CurrentMusicStateModelDto
 import com.sanam.database.dto.MusicModelDto
-import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -21,7 +20,7 @@ class MusicListSharedPreference @Inject constructor(@ApplicationContext context:
         )
     }
 
-    override fun setMusicList(musicList: ArrayList<MusicModel>) {
+    override fun setMusicList(musicList: ArrayList<MusicModelDto>) {
         val gson = Gson()
         val json = gson.toJson(musicList)
         sharedPreferences.edit()
