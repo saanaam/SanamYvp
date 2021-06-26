@@ -1,11 +1,13 @@
 package com.sanam.yavarpour.local.repository
 
+import com.sanam.yavarpour.MusicListMock
 import com.sanam.yavarpour.domain.usecase.musicPlayer.model.CurrentMusicStateModel
 import com.sanam.yavarpour.domain.usecase.musicPlayer.model.MusicModel
 import com.sanam.yavarpour.domain.usecase.musicPlayer.model.PlayingMusicModel
 import com.sanam.yavarpour.domain.usecase.musicPlayer.repository.MusicListControllerRepository
 import com.sanam.yavarpour.local.localDataSource.MusicListControllerDataSource
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 class MusicListControllerDataRepository @Inject constructor(
     private val musicListControllerDataSource: MusicListControllerDataSource
@@ -14,8 +16,15 @@ class MusicListControllerDataRepository @Inject constructor(
     override suspend fun getMusicList() =
         musicListControllerDataSource.getMusicList()
 
-    override suspend fun setMusicList(isPremium: Boolean) =
-        musicListControllerDataSource.setMusicList(isPremium)
+    override suspend fun setMusicList(isPremium: Boolean) {
+        if (isPremium)
+            musicListControllerDataSource.setMusicList(MusicListMock().musicList())
+        else {
+            musicListControllerDataSource.setMusicList(
+                MusicListMock().musicList().shuffle() as ArrayList<MusicModel>
+            )
+        }
+    }
 
     override suspend fun updatePlayingMusic(currentMusicId: Int) =
         musicListControllerDataSource.updatePlayingMusic(currentMusicId)

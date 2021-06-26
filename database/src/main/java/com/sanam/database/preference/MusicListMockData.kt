@@ -5,22 +5,6 @@ import com.sanam.database.dto.PlayingMusicModelDto
 
 
 class MusicListMockData {
-
-    fun musicList(): ArrayList<MusicModelDto> {
-        return ArrayList<MusicModelDto>().apply {
-            add(MusicModelDto(1))
-            add(MusicModelDto(2))
-            add(MusicModelDto(3))
-            add(MusicModelDto(4))
-            add(MusicModelDto(5))
-            add(MusicModelDto(6))
-            add(MusicModelDto(7))
-            add(MusicModelDto(8))
-            add(MusicModelDto(9))
-            add(MusicModelDto(10))
-        }
-    }
-
     fun musicListInfo(): ArrayList<PlayingMusicModelDto> {
         return ArrayList<PlayingMusicModelDto>().apply {
             add(PlayingMusicModelDto(1, "Give Up", "Adel", 120))

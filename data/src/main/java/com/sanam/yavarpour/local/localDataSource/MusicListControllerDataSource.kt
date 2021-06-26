@@ -7,7 +7,7 @@ import com.sanam.yavarpour.domain.usecase.musicPlayer.model.PlayingMusicModel
 
 interface MusicListControllerDataSource : DataSource {
     suspend fun getMusicList(): ArrayList<MusicModel>
-    suspend fun setMusicList(isPremium : Boolean)
+    suspend fun setMusicList(musicList: ArrayList<MusicModel>)
     suspend fun updateMusicList(musicList : ArrayList<MusicModel>)
     suspend fun updatePlayingMusic(currentMusicId: Int )
     suspend fun updateMusicState(item: CurrentMusicStateModel)
