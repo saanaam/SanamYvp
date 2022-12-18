@@ -2,12 +2,6 @@
 
 This is presentation document. `UI Components` (/presentation) package.
 
-
-## Naming conventions
-
-For naming convention read the [doc](/documentation/NaminConvetion.md).
-
-
 ## View State
 
 use ViewState to Avoid using many show() and hide() for views that has changing states. e.g. Screen my show loading until data loads.
